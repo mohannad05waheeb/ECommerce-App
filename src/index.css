@@ -1,0 +1,431 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+    margin: 0;
+    padding: 0
+}
+body {
+    user-select: none;    
+    font-family: Kumbh Sans, sans-serif;   
+    overflow-x: hidden;
+}  
+html {
+    scroll-behavior: smooth;
+}
+.bb {
+    @apply relative;
+}
+.bb::after {
+    content: "";
+    position: absolute;
+    bottom: -43px;  
+    left: 0;
+    width: 0; 
+    height: 2px;
+    background-color: orange;    
+} 
+.bb:hover::after {
+    width: 100%;  
+} 
+.hr {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+    margin-top: 25px;
+} 
+.navLink {
+    position: relative;
+    display: block;
+    padding: 0;
+}
+.navLink::before {
+    content: "";
+    position: absolute; 
+    right: 0; 
+    left: -40px; 
+    width: 105%;
+    height: 100%;
+    background-color: hsl(25, 100%, 94%);
+    transform: scaleX(0);  
+    transform-origin: right;  
+    transition: transform 0.3s ease; 
+    z-index: -1;
+}
+.navLink:hover::before {
+    transform: scaleX(1);  
+    transform-origin: left;  
+}  
+.btn-scroll:hover {
+    transform: scale(1.07);
+} 
+.profile {
+    background-color: hsl(25, 100%, 94%);
+    width: 100%;
+    height: calc(100vh - 6rem);
+}
+.profileSneaker {
+    height: calc(100vh - 12rem);
+    border-radius: 5px 0px 0px 5px;   
+}
+.profile-input {
+    background-color: hsl(25, 100%, 94%);  
+    margin-bottom: 15px;  
+    width: 300px;  
+    padding: 15px; 
+    transform: translateX(-20px);  
+    max-width: 100%;
+    outline: none;
+    border: none;
+}
+.profile-input:focus {
+    outline: 2px solid orange;  
+}
+.profile-btn {  
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    transform: translate(-10px);
+}
+.profile-btn:hover {
+    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.4);  
+} 
+.profile, .profile-container {    
+    overflow-x: hidden;
+}
+.footer-container {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}  
+.footer-logo {
+    flex: 1; 
+    margin-bottom: 140px;
+}  
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin: 20px 0;
+}  
+.footer-column {
+    flex: 1;
+    padding: 0 10px;
+}  
+.footer-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: hsl(25, 100%, 94%);
+}  
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}  
+.footer-credits {
+    font-size: 14px;
+    margin-top: 20px;
+} 
+.name {
+    color: hsl(25, 100%, 94%);
+}
+.linkHover:hover {
+    color: hsl(25, 100%, 94%);
+    transition: 0.5s;
+}
+.contact {
+    background-color: hsl(25, 100%, 94%);
+    width: 100%;
+    height: calc(100vh - 6rem);
+} 
+.contact-button {
+    background-color: hsl(25, 100%, 94%);
+    margin-bottom: 10px;
+    padding: 10px; 
+    outline: none;
+    border: none;
+    width: 400px;
+}
+.contact-button:focus {
+    outline: 2px solid orange;
+}
+.bg {
+    background-color: hsl(25, 100%, 94%);
+    width: 100%;
+  
+}
+.about {
+    background-color: hsl(25, 100%, 94%);
+    width: 100%;
+    height: calc(100vh - 6rem);
+} 
+.text-sec {
+    color: hsl(219, 9%, 45%);
+}
+.title-style {
+    position: relative;
+    color: transparent;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+    -webkit-text-stroke: 1px black;  
+    text-shadow:
+        2px 2px 0 #ffffff,  
+        -2px -2px 0 #ffffff,
+        2px -2px 0 #ffffff,
+        -2px 2px 0 #ffffff;
+} 
+.shadow:hover {
+    box-shadow: 0 4px 15px rgba(255, 127, 100, 0.5);
+}
+.products-container {
+    display: grid;    
+    gap: 1rem;
+}
+.animation-container {
+    position: relative;
+    display: block;
+    text-align: center;
+    border-bottom: black 2px solid;
+    height: 11rem;
+    width: 13rem;  
+    overflow: hidden;
+}
+.bounce {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 5rem;
+    aspect-ratio: 1 / 1;
+    margin-left: -30px;
+    background-size: contain;
+    animation: bounceAnim 1s cubic-bezier(0.63, 0.09, 0.75, 0.46) infinite
+    alternate,
+    spinAnim 3s linear infinite;
+}  
+@keyframes pebblesAnim {
+    0% {
+      right: -20%;
+    }
+    100% {
+      right: 110%;
+    }
+}  
+@keyframes bounceAnim {
+    0%,
+    10% {
+      bottom: 30%;
+    }  
+    100% {
+      bottom: 0%;
+    }
+}
+@keyframes spinAnim {
+    0% {
+      transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+    }
+}
+.animate-float {
+    animation: floating 3s infinite ease-in-out;
+    -webkit-animation: floating 3s infinite ease-in-out;
+}
+@keyframes floating {
+    from {
+      transform: translate(0, 0px);
+      -webkit-transform: translate(0, 0px);
+      -moz-transform: translate(0, 0px);
+      -ms-transform: translate(0, 0px);
+      -o-transform: translate(0, 0px);
+    }
+    65% {
+      transform: translate(0, -15px);
+      -webkit-transform: translate(0, -15px);
+      -moz-transform: translate(0, -15px);
+      -ms-transform: translate(0, -15px);
+      -o-transform: translate(0, -15px);
+    }
+    to {
+      transform: translate(0, -0px);
+      -webkit-transform: translate(0, -0px);
+      -moz-transform: translate(0, -0px);
+      -ms-transform: translate(0, -0px);
+      -o-transform: translate(0, -0px);
+    }
+  }
+@media (min-width: 768px) {
+    .md\:hidden {
+        display: none;
+    }  
+    .products-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 767px) {
+    .home-sneakers {     
+       width: 200px;
+       height: 200px;   
+       transform: rotate(-25deg); 
+       margin-top: 300px;
+    }
+    .home {
+        transform: translateY(-60px); 
+    }  
+    .home-circle {
+        top: 50%;  
+        right: auto;
+        left: 40%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        height: 200px;
+    }
+    .title {
+        font-size: 30px;
+    }
+    .desc {
+        font-size: 14px;
+    }
+    .btn-shop {
+        width: 160px;
+        height: 45px;
+        transform: translateY(-2px); 
+    }
+    .profileSneaker {
+        display: none;
+    }
+    .container-button {
+        display: grid;
+    }
+    .profile-content {
+        transform: translateX(-15px);
+    }    
+    .footer-links {
+        flex-direction: column;
+        width: 100%;
+        text-align: start; 
+    }
+    .contact-content {
+        display: grid;
+        width: 300px;
+    }
+    .contact-button {
+        width: 220px;
+        margin-left: 20px;
+    }
+    .submit {
+        width: 220px;
+        margin-left: 20px;
+    }
+    .titleAbout {
+        font-size: 40px;
+    }        
+    .products-container {
+        grid-template-columns: 1fr;
+    }
+    .cart {
+        display: grid;
+    }
+    .btn-check , .view {
+        margin-top: 50px;
+        transform: translateX(-130px); 
+        white-space: nowrap;
+    }
+    .title {
+        margin-left: 80px;
+    }
+    .count {
+        transform: translateX(50px);
+    }
+    .about2 {
+        display: grid;       
+    }   
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .home {
+        transform: translateY(180px);  
+    }
+    .home-sneakers {
+        transform: rotate(-25deg) translateX(-40px);
+        width: 200px;
+        height: 200px;         
+    }
+    .home-circle {
+        width: 250px;
+        height: 250px;     
+    } 
+    .cart {
+        display: grid;
+    }
+    .view , .btn-check {
+        transform: translateX(-180px);
+        margin-top: 50px;
+    }   
+}
+@media (min-width: 1024px) {
+    .home-sneakers {
+        transform: none; 
+        transform: rotate(-25deg);        
+    } 
+}
+@media (max-width: 1023px) {
+    .profileSneaker {
+        display: none !important;
+    }
+}
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .profile {
+        justify-content: center;  
+        padding: 2rem;  
+    }
+    .profile-container {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        border-radius: 10px;
+      
+        gap: 2rem;
+    }
+    .profile-content {
+        padding: 2rem;
+    }
+}
+@media (min-width: 1024px) {
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+} 
+@media (max-width: 1024px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }   
+}
+@media (min-width: 1280px) {
+    .titleAbout {
+        font-size: 130px;
+    }
+} 
+@media (min-width: 769px) {
+    .products-container {
+        grid-template-columns: repeat(3, 1fr); /* عرض 3 منتجات في الصف */
+    }
+}
